@@ -110,6 +110,7 @@
   function buildGift() {
     $("giftEyebrow").textContent = G.eyebrow;
     $("giftTitle").textContent = fill(G.title);
+    $("giftSub").textContent = G.sub ? fill(G.sub) : "";
     $("giftHint").textContent = G.hints[0];
   }
 

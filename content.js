@@ -15,6 +15,7 @@ const CONTENT = {
   /* --- ECRAN 1 : le paquet ---------------------------------- */
   gift: {
     title:   "Joyeux anniversaire{herName} !",
+    sub:     "20 ans, ça se fête en grand.",
     hints:   ["tape sur le cadeau", "encore", "plus fort", "voilà"],
     loading: "Chargement de ton cadeau… {pct} %",
     shy:     "Le cadeau est un peu timide…",

@@ -4,27 +4,27 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ---------- tokens ----------------------------------------
-   One theme only, taken from the closing card: deep bordeaux ground,
-   white text, pale-rose accents, translucent white surfaces.
+   One theme only: bright pink ground (white text stays >= 4.5:1 on every
+   stop, #DB2777 to #BE185D), pale-yellow accents, translucent white surfaces.
    Identical in light and dark mode on purpose. */
 :root{
   color-scheme: dark;
-  --primary:      #FDA4AF;
-  --primary-dark: #FFE4E6;
-  --on-primary:   #6B0E2B;
-  --secondary:    #FB7185;
+  --primary:      #FEF08A;
+  --primary-dark: #FFF7FB;
+  --on-primary:   #9D174D;
+  --secondary:    #F9A8D4;
   --accent:       #FBBF24;
-  --bg:           #6E0D2A;
+  --bg:           #CF1F6A;
   --bg-warm:      rgba(255,255,255,.08);
   --surface:      rgba(255,255,255,.10);
-  --fg:           #FFE4E6;
+  --fg:           #FFF7FB;
   --fg-strong:    #FFFFFF;
-  --muted:        #FBCFD6;
-  --border:       rgba(255,255,255,.22);
+  --muted:        #FFF0F6;
+  --border:       rgba(255,255,255,.3);
   --ring:         #FFFFFF;
-  --shadow-sm: 0 1px 2px rgba(20,0,8,.25), 0 2px 8px rgba(20,0,8,.2);
-  --shadow-md: 0 4px 12px rgba(20,0,8,.28), 0 12px 32px rgba(20,0,8,.3);
-  --shadow-lg: 0 8px 24px rgba(20,0,8,.35), 0 24px 64px rgba(20,0,8,.4);
+  --shadow-sm: 0 1px 2px rgba(110,10,55,.2), 0 2px 8px rgba(110,10,55,.16);
+  --shadow-md: 0 4px 12px rgba(110,10,55,.22), 0 12px 32px rgba(110,10,55,.24);
+  --shadow-lg: 0 8px 24px rgba(110,10,55,.28), 0 24px 64px rgba(110,10,55,.32);
 
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
   --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
@@ -40,8 +40,8 @@
 
   --ring-soft: transparent;
 
-  --glass: linear-gradient(160deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.06) 100%);
-  --glass-edge: inset 0 0 0 1.5px rgba(255,255,255,.16);
+  --glass: linear-gradient(160deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 100%);
+  --glass-edge: inset 0 0 0 1.5px rgba(255,255,255,.28);
 
   --safe-t: env(safe-area-inset-top,  0px);
   --safe-b: env(safe-area-inset-bottom,0px);
@@ -414,8 +414,8 @@ button{ background:none; border:0; cursor:pointer; }
    fell to ~2.6:1 and was hard to read. Same colours in light and dark. */
 .card--quiet{
   background:
-    radial-gradient(90% 60% at 85% 0%, rgba(255,255,255,.14) 0%, transparent 60%),
-    linear-gradient(160deg, #BE123C 0%, #9F1239 55%, #7A1030 100%);
+    radial-gradient(90% 60% at 85% 0%, rgba(255,255,255,.18) 0%, transparent 60%),
+    linear-gradient(160deg, #C2185B 0%, #AD1457 55%, #9D174D 100%);
   color:#FFFFFF;
 }
 .card--quiet .card__body{
@@ -678,26 +678,26 @@ button{ background:none; border:0; cursor:pointer; }
    ═══════════════════════════════════════════════════════════ */
 body{
   background:
-    radial-gradient(90% 55% at 85% 0%, rgba(255,255,255,.10) 0%, transparent 60%),
-    radial-gradient(90% 60% at 0% 100%, rgba(0,0,0,.22) 0%, transparent 60%),
-    linear-gradient(165deg, #8A1034 0%, #6E0D2A 55%, #4A0819 100%);
-  background-color:#6E0D2A;
+    radial-gradient(80% 50% at 90% 0%, rgba(255,255,255,.20) 0%, transparent 60%),
+    radial-gradient(70% 45% at 0% 100%, rgba(254,240,138,.14) 0%, transparent 60%),
+    linear-gradient(165deg, #DB2777 0%, #CF1F6A 50%, #BE185D 100%);
+  background-color:#CF1F6A;
   background-attachment:fixed;
 }
 
 /* buttons: white pill with bordeaux text, ghost = the kicker pill */
-.btn{ --btn-bg:#FFFFFF; --btn-fg:#9F1239; }
-.btn:hover{ background:#FFE4E6; }
+.btn{ --btn-bg:#FFFFFF; --btn-fg:#BE185D; }
+.btn:hover{ background:#FFF0F6; }
 .btn--ghost{
   --btn-bg:transparent; --btn-fg:#FFFFFF;
   border:2px solid rgba(255,255,255,.3); box-shadow:none;
 }
 .btn--ghost:hover{ background:rgba(255,255,255,.08); }
 .btn--no{
-  --btn-bg:#8E1236; --btn-fg:#FFE4E6;
+  --btn-bg:#AD1457; --btn-fg:#FFFFFF;
   border:2px solid rgba(255,255,255,.3); box-shadow:var(--shadow-sm);
 }
-.btn--no:hover{ background:#8E1236; }
+.btn--no:hover{ background:#AD1457; }
 .iconbtn{ color:var(--muted); }
 .iconbtn:hover{ color:#FFFFFF; background:rgba(255,255,255,.08); }
 .linkbtn{ color:var(--muted); text-decoration-color:rgba(255,255,255,.35); }
@@ -715,16 +715,16 @@ body{
   color:#FFFFFF;
 }
 .card__list li::before{ color:var(--primary); }
-.card__list li span{ text-decoration-color:rgba(253,164,175,.75); }
+.card__list li span{ text-decoration-color:rgba(254,240,138,.85); }
 
 /* gift box: pale rose on bordeaux */
-.gift__box{ filter:drop-shadow(0 16px 22px rgba(20,0,8,.45)); }
-.gift__body{ fill:#FB7185; }
-.gift__lidshape{ fill:#FDA4AF; }
+.gift__box{ filter:drop-shadow(0 16px 22px rgba(110,10,55,.35)); }
+.gift__body{ fill:#FFFFFF; }
+.gift__lidshape{ fill:#FCE7F3; }
 .gift__ribbon{ fill:#FBBF24; }
 .gift__hint{ color:var(--muted); }
 .loader__bar{ background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.2); }
-.loader__bar span{ background:linear-gradient(90deg, #FDA4AF, #FFFFFF); }
+.loader__bar span{ background:linear-gradient(90deg, #FEF08A, #FFFFFF); }
 
 /* voucher */
 .voucher{ background:var(--glass); box-shadow:var(--glass-edge), var(--shadow-lg); }
@@ -749,14 +749,24 @@ body{
 }
 .daybtn:hover{ border-color:#FFFFFF; }
 .daybtn[disabled]{ background:transparent; border-color:rgba(255,255,255,.12); opacity:.55; }
-.daybtn[disabled] strong{ text-decoration-color:rgba(253,164,175,.7); }
+.daybtn[disabled] strong{ text-decoration-color:rgba(254,240,138,.85); }
 
 /* confirm sheet: solid, so the days behind don't bleed through */
-.scrim{ background:rgba(25,0,10,.6); }
-.sheet{ background:#7A1030; box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16), var(--shadow-lg); }
+.scrim{ background:rgba(80,5,40,.45); }
+.sheet{ background:#BE185D; box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16), var(--shadow-lg); }
 .sheet__grab{ background:rgba(255,255,255,.3); }
 
 /* done */
 .done__mark{ color:var(--primary); }
 .countdown{ background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.2); color:#FFFFFF; }
 .done__dot{ color:rgba(255,255,255,.35); }
+
+/* 20th-birthday line under the opening title */
+.gift__sub{
+  margin:var(--s-2) 0 0; padding:var(--s-2) var(--s-4);
+  border-radius:var(--r-full);
+  background:rgba(255,255,255,.16);
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3);
+  color:#FFFFFF; font-weight:700; font-size:1.05rem;
+}
+.gift__sub:empty{ display:none; }
