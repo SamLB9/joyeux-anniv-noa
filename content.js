@@ -133,6 +133,6 @@ const CONTENT = {
     eventTitle:   "Dîner d'anniversaire avec {you}",
     eventNote:    "Lieu secret. Tenue : raisonnablement bien habillée.",
     durationHours: 2,
-    footnote:     "Si WhatsApp ne s'est pas ouvert, appuie sur le bouton blanc juste au-dessus."
+    footnote:     "Si WhatsApp ne s'est pas ouvert, appuie sur le bouton juste au-dessus."
   }
 };
