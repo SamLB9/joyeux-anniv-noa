@@ -43,7 +43,7 @@ const CONTENT = {
       list: [
         "Des cours à l'auto-école pour t'apprendre à faire des créneaux",
         "Une boussole pour améliorer ton sens de l'orientation",
-        "Une arme pour te protéger lors de tes aprèms en Cisjordanie"
+        "Un Glock pour tes excursions en Cisjordanie"
       ],
       caption:  "Tous rejetés par le comité, Sam."
     },
