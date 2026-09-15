@@ -26,7 +26,7 @@ const CONTENT = {
     {
       photo:    "assets/photos/nous.jpg",
       focus:    "50% 32%",
-      caption:  "Toi au volant, moi le bras sur ton siège. Petite précision, ce n'est pas de la tendresse, c'était pour m'accrocher avant ton créneau."
+      caption:  "Toi au volant, moi le bras sur ton siège. Petite précision, ce n'est pas de la tendresse, c'était pour m'accrocher avant ton créneau. 😂"
     },
     {
       headline: "Ce que j'ai failli t'offrir",
@@ -35,7 +35,7 @@ const CONTENT = {
         "Une boussole pour améliorer ton sens de l'orientation",
         "Une arme pour te protéger lors de tes aprèms en Cisjordanie"
       ],
-      caption:  "Tous rejetés par le comité. Le comité, c'est moi."
+      caption:  "Tous rejetés par le comité, Sam."
     },
     {
       photo:    null,
@@ -51,7 +51,7 @@ const CONTENT = {
   reveal: {
     eyebrow: "ton cadeau",
     title:   "Bon pour un dîner",
-    sub:     "au restaurant, offert par {you}",
+    sub:     "au restaurant, avec {you}",
     rows: [
       { label: "Quand", value: "{day}" },
       { label: "Heure", value: "{time}" },
@@ -76,7 +76,7 @@ const CONTENT = {
       "juste le café ?",
       "bon…"
     ],
-    noGone: "Le bouton a compris. Tu ne paies rien."
+    noGone: "Le bouton a compris, tu es invitée."
   },
 
   /* --- ECRAN 5 : le créneau --------------------------------- */
