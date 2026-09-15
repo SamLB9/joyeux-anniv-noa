@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#8A1034">
+<title>Pour ton anniversaire</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127873;</text></svg>">
+</head>
+
+<body>
+
+<!-- ═══════════ 1. le paquet ═══════════ -->
+<section class="act" id="act-gift" hidden>
+  <div class="gift">
+    <p class="gift__eyebrow" id="giftEyebrow"></p>
+    <h1 class="gift__title" id="giftTitle"></h1>
+
+    <button type="button" class="gift__box" id="giftBox" aria-label="Ouvrir le cadeau">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <g class="gift__lid">
+          <path class="gift__ribbon" d="M100 58 C78 26 44 30 52 50 C58 64 84 62 100 58 Z"/>
+          <path class="gift__ribbon" d="M100 58 C122 26 156 30 148 50 C142 64 116 62 100 58 Z"/>
+          <rect class="gift__lidshape" x="30" y="58" width="140" height="34" rx="8"/>
+          <rect class="gift__ribbon" x="90" y="58" width="20" height="34"/>
+        </g>
+        <rect class="gift__body" x="40" y="92" width="120" height="92" rx="8"/>
+        <rect class="gift__ribbon" x="90" y="92" width="20" height="92"/>
+      </svg>
+    </button>
+
+    <p class="gift__hint" id="giftHint" aria-live="polite"></p>
+
+    <div class="loader" id="loader" hidden>
+      <div class="loader__bar"><span id="loaderFill"></span></div>
+      <p class="loader__label" id="loaderLabel" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ 2. les cartes ═══════════ -->
+<section class="act" id="act-intro" hidden>
+  <div class="deck">
+    <div class="deck__track" id="deckTrack" role="group" aria-roledescription="carousel" aria-label="Petite introduction"></div>
+
+    <div class="deck__chrome">
+      <div class="dots" id="deckDots" role="tablist" aria-label="Cartes"></div>
+      <div class="deck__nav">
+        <button type="button" class="iconbtn" id="deckPrev" aria-label="Carte précédente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="btn btn--next" id="deckNext">
+          <span id="deckNextLabel"></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__chev"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ 3. la révélation ═══════════ -->
+<section class="act act--free" id="act-reveal" hidden>
+  <div class="reveal">
+    <article class="voucher">
+      <p class="voucher__eyebrow" id="vEyebrow"></p>
+      <h1 class="voucher__title" id="vTitle"></h1>
+      <p class="voucher__sub" id="vSub"></p>
+      <div class="voucher__tear" aria-hidden="true"></div>
+      <dl class="voucher__rows" id="vRows"></dl>
+      <p class="voucher__note" id="vNote"></p>
+    </article>
+    <button type="button" class="btn btn--yes" id="revealNext"></button>
+  </div>
+</section>
+
+
+<!-- ═══════════ 4. le Non qui s'enfuit ═══════════ -->
+<section class="act" id="act-pay" hidden>
+  <div class="ask">
+    <figure class="ask__photo" id="askPhoto"></figure>
+    <h1 class="ask__q" id="askQ"></h1>
+
+    <div class="ask__buttons">
+      <button type="button" class="btn btn--yes" id="yesBtn"></button>
+      <button type="button" class="btn btn--no" id="noBtn"></button>
+    </div>
+
+    <p class="ask__aside" id="askAside" aria-live="polite"></p>
+  </div>
+</section>
+
+
+<!-- ═══════════ 5. le créneau ═══════════ -->
+<section class="act" id="act-slot" hidden>
+  <div class="slotq">
+    <div class="datetile" aria-hidden="true">
+      <span class="datetile__top" id="tileTop"></span>
+      <strong class="datetile__day" id="tileDay"></strong>
+      <span class="datetile__time" id="tileTime"></span>
+    </div>
+    <p class="slotq__eyebrow" id="slotEyebrow"></p>
+    <h1 class="slotq__title" id="slotTitle"></h1>
+    <p class="slotq__sub" id="slotSub"></p>
+    <div class="slotq__buttons">
+      <button type="button" class="btn btn--yes btn--block" id="slotYes"></button>
+      <button type="button" class="btn btn--ghost btn--block" id="slotNo"></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ 6. un autre soir ═══════════ -->
+<section class="act act--free" id="act-pick" hidden>
+  <div class="book">
+    <header class="book__head">
+      <h1 class="book__title" id="pickTitle"></h1>
+      <p class="book__sub" id="pickSub"></p>
+    </header>
+    <div class="days" id="dayGrid" role="group" aria-label="Soirs disponibles"></div>
+    <button type="button" class="linkbtn" id="pickBack"></button>
+  </div>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetLine" hidden>
+    <div class="sheet__grab" aria-hidden="true"></div>
+    <p class="sheet__line" id="sheetLine"></p>
+    <button type="button" class="btn btn--yes btn--block" id="sheetConfirm"></button>
+    <button type="button" class="linkbtn" id="sheetCancel"></button>
+  </div>
+</section>
+
+
+<!-- ═══════════ 7. confirmation ═══════════ -->
+<section class="act act--free" id="act-done" hidden>
+  <div class="done">
+    <div class="done__mark" aria-hidden="true">
+      <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg>
+    </div>
+    <h1 class="done__headline" id="doneHeadline"></h1>
+    <p  class="done__line"     id="doneLine"></p>
+    <p  class="countdown"      id="countdown"></p>
+    <p  class="done__caption"  id="doneCaption"></p>
+
+    <div class="done__actions">
+      <a  class="btn btn--yes btn--block" id="waBtn" target="_blank" rel="noopener"></a>
+      <button type="button" class="btn btn--ghost btn--block" id="calBtn"></button>
+      <div class="done__minor">
+        <button type="button" class="linkbtn" id="copyBtn"></button>
+        <span class="done__dot" aria-hidden="true">·</span>
+        <a class="linkbtn" id="smsBtn"></a>
+      </div>
+    </div>
+
+    <p class="done__foot" id="doneFoot"></p>
+  </div>
+</section>
+
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+<span class="sr-only" id="live" aria-live="polite"></span>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
