@@ -4,27 +4,27 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ---------- tokens ----------------------------------------
-   One theme only: bright pink ground (white text stays >= 4.5:1 on every
-   stop, #DB2777 to #BE185D), pale-yellow accents, translucent white surfaces.
-   Identical in light and dark mode on purpose. */
+   One light, cheerful theme: blush-pink ground, deep raspberry text,
+   white cards, vivid pink for buttons, the gift and the closing card.
+   Every text pair is >= 4.5:1 (checked). Same in light and dark mode. */
 :root{
-  color-scheme: dark;
-  --primary:      #FEF08A;
-  --primary-dark: #FFF7FB;
-  --on-primary:   #9D174D;
-  --secondary:    #F9A8D4;
-  --accent:       #FBBF24;
-  --bg:           #CF1F6A;
-  --bg-warm:      rgba(255,255,255,.08);
-  --surface:      rgba(255,255,255,.10);
-  --fg:           #FFF7FB;
-  --fg-strong:    #FFFFFF;
-  --muted:        #FFF0F6;
-  --border:       rgba(255,255,255,.3);
-  --ring:         #FFFFFF;
-  --shadow-sm: 0 1px 2px rgba(110,10,55,.2), 0 2px 8px rgba(110,10,55,.16);
-  --shadow-md: 0 4px 12px rgba(110,10,55,.22), 0 12px 32px rgba(110,10,55,.24);
-  --shadow-lg: 0 8px 24px rgba(110,10,55,.28), 0 24px 64px rgba(110,10,55,.32);
+  color-scheme: light;
+  --primary:      #DB2777;
+  --primary-dark: #BE185D;
+  --on-primary:   #FFFFFF;
+  --secondary:    #F472B6;
+  --accent:       #FACC15;
+  --bg:           #FDF2F8;
+  --bg-warm:      #FCE7F3;
+  --surface:      #FFFFFF;
+  --fg:           #831843;
+  --fg-strong:    #6B1238;
+  --muted:        #9D174D;
+  --border:       #FBCFE8;
+  --ring:         #DB2777;
+  --shadow-sm: 0 1px 2px rgba(190,24,93,.08), 0 2px 8px rgba(190,24,93,.07);
+  --shadow-md: 0 4px 12px rgba(190,24,93,.10), 0 12px 32px rgba(190,24,93,.12);
+  --shadow-lg: 0 8px 24px rgba(190,24,93,.14), 0 24px 64px rgba(190,24,93,.18);
 
   --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
   --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
@@ -39,9 +39,6 @@
   --t-fast: 160ms; --t-mid: 260ms; --t-slow: 380ms;
 
   --ring-soft: transparent;
-
-  --glass: linear-gradient(160deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 100%);
-  --glass-edge: inset 0 0 0 1.5px rgba(255,255,255,.28);
 
   --safe-t: env(safe-area-inset-top,  0px);
   --safe-b: env(safe-area-inset-bottom,0px);
@@ -673,100 +670,103 @@ button{ background:none; border:0; cursor:pointer; }
 
 
 /* ═══════════════════════════════════════════════════════════
-   Thème bordeaux : chaque écran reprend la carte finale.
-   (placed last so it wins over the component rules above)
+   Thème rose clair (placed last so it wins over the rules above)
    ═══════════════════════════════════════════════════════════ */
 body{
   background:
-    radial-gradient(80% 50% at 90% 0%, rgba(255,255,255,.20) 0%, transparent 60%),
-    radial-gradient(70% 45% at 0% 100%, rgba(254,240,138,.14) 0%, transparent 60%),
-    linear-gradient(165deg, #DB2777 0%, #CF1F6A 50%, #BE185D 100%);
-  background-color:#CF1F6A;
+    radial-gradient(70% 45% at 100% 0%, #FBCFE8 0%, transparent 60%),
+    radial-gradient(60% 40% at 0% 100%, #FCE7F3 0%, transparent 60%),
+    linear-gradient(170deg, #FFF5FA 0%, #FDF2F8 55%, #FCE7F3 100%);
+  background-color:#FDF2F8;
   background-attachment:fixed;
 }
 
-/* buttons: white pill with bordeaux text, ghost = the kicker pill */
-.btn{ --btn-bg:#FFFFFF; --btn-fg:#BE185D; }
-.btn:hover{ background:#FFF0F6; }
+/* buttons */
+.btn{ --btn-bg:#BE185D; --btn-fg:#FFFFFF; }
+.btn:hover{ background:#9D174D; }
 .btn--ghost{
-  --btn-bg:transparent; --btn-fg:#FFFFFF;
-  border:2px solid rgba(255,255,255,.3); box-shadow:none;
+  --btn-bg:#FFFFFF; --btn-fg:#9D174D;
+  border:2px solid #F9A8D4; box-shadow:var(--shadow-sm);
 }
-.btn--ghost:hover{ background:rgba(255,255,255,.08); }
+.btn--ghost:hover{ background:#FDF2F8; }
 .btn--no{
-  --btn-bg:#AD1457; --btn-fg:#FFFFFF;
-  border:2px solid rgba(255,255,255,.3); box-shadow:var(--shadow-sm);
+  --btn-bg:#FFFFFF; --btn-fg:#9D174D;
+  border:2px solid #F9A8D4; box-shadow:var(--shadow-sm);
 }
-.btn--no:hover{ background:#AD1457; }
-.iconbtn{ color:var(--muted); }
-.iconbtn:hover{ color:#FFFFFF; background:rgba(255,255,255,.08); }
-.linkbtn{ color:var(--muted); text-decoration-color:rgba(255,255,255,.35); }
-.linkbtn:hover{ color:#FFFFFF; }
-.dot[aria-selected="true"]{ background:#FFFFFF; }
+.btn--no:hover{ background:#FFFFFF; }
+.iconbtn{ color:#BE185D; }
+.iconbtn:hover{ color:#9D174D; background:#FCE7F3; }
+.linkbtn{ color:#9D174D; text-decoration-color:#F9A8D4; }
+.linkbtn:hover{ color:#6B1238; }
+.dot{ background:#FBCFE8; }
+.dot[aria-selected="true"]{ background:#DB2777; }
 
-/* cards: translucent panels with the badge's hairline edge */
-.card{ background:var(--glass); box-shadow:var(--glass-edge), var(--shadow-md); }
-.card__media{ background:rgba(255,255,255,.06); }
-.card__caption{ color:var(--muted); }
-.card--quiet{ box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18), var(--shadow-lg); }
-.card__list li{
-  background:rgba(255,255,255,.08);
-  border:1.5px solid rgba(255,255,255,.18);
+/* cards: white, soft pink edge */
+.card{ background:#FFFFFF; box-shadow:inset 0 0 0 1.5px #FCE7F3, var(--shadow-md); }
+.card__media{ background:#FCE7F3; }
+.card__caption{ color:#831843; }
+/* the closing card stays the one vivid panel (must come after .card) */
+.card.card--quiet{
+  background:
+    radial-gradient(90% 60% at 85% 0%, rgba(255,255,255,.20) 0%, transparent 60%),
+    linear-gradient(160deg, #DB2777 0%, #C2185B 55%, #9D174D 100%);
+  box-shadow:var(--shadow-lg);
   color:#FFFFFF;
 }
-.card__list li::before{ color:var(--primary); }
-.card__list li span{ text-decoration-color:rgba(254,240,138,.85); }
+.card--quiet .card__caption{ color:#FFFFFF; }
+.card__list li{ background:#FDF2F8; border:1.5px solid #FBCFE8; color:#6B1238; }
+.card__list li::before{ color:#DB2777; }
+.card__list li span{ text-decoration-color:rgba(219,39,119,.55); }
 
-/* gift box: pale rose on bordeaux */
-.gift__box{ filter:drop-shadow(0 16px 22px rgba(110,10,55,.35)); }
-.gift__body{ fill:#FFFFFF; }
-.gift__lidshape{ fill:#FCE7F3; }
-.gift__ribbon{ fill:#FBBF24; }
-.gift__hint{ color:var(--muted); }
-.loader__bar{ background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.2); }
-.loader__bar span{ background:linear-gradient(90deg, #FEF08A, #FFFFFF); }
-
-/* voucher */
-.voucher{ background:var(--glass); box-shadow:var(--glass-edge), var(--shadow-lg); }
-.voucher__tear{ margin:var(--s-5) 0; border-top-color:rgba(255,255,255,.28); }
-.voucher__tear::before, .voucher__tear::after{ display:none; }
-.voucher__note{
-  background:rgba(255,255,255,.12);
-  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.22);
-  color:#FFFFFF;
-}
-
-/* ask */
-.ask__photo{ border:5px solid rgba(255,255,255,.9); background:rgba(255,255,255,.1); }
-.ask__aside{ color:var(--muted); }
-
-/* date tile + day picker */
-.datetile{ background:var(--glass); box-shadow:var(--glass-edge), var(--shadow-md); }
-.datetile__day{ color:#FFFFFF; }
-.daybtn{
-  background:var(--glass); border:1.5px solid rgba(255,255,255,.18);
-  box-shadow:var(--shadow-sm); color:#FFFFFF;
-}
-.daybtn:hover{ border-color:#FFFFFF; }
-.daybtn[disabled]{ background:transparent; border-color:rgba(255,255,255,.12); opacity:.55; }
-.daybtn[disabled] strong{ text-decoration-color:rgba(254,240,138,.85); }
-
-/* confirm sheet: solid, so the days behind don't bleed through */
-.scrim{ background:rgba(80,5,40,.45); }
-.sheet{ background:#BE185D; box-shadow:inset 0 1.5px 0 rgba(255,255,255,.16), var(--shadow-lg); }
-.sheet__grab{ background:rgba(255,255,255,.3); }
-
-/* done */
-.done__mark{ color:var(--primary); }
-.countdown{ background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.2); color:#FFFFFF; }
-.done__dot{ color:rgba(255,255,255,.35); }
-
-/* 20th-birthday line under the opening title */
+/* gift box: vivid pink with a gold ribbon */
+.gift__box{ filter:drop-shadow(0 16px 22px rgba(190,24,93,.28)); }
+.gift__body{ fill:#EC4899; }
+.gift__lidshape{ fill:#DB2777; }
+.gift__ribbon{ fill:#FACC15; }
+.gift__hint{ color:#9D174D; }
+.loader__bar{ background:#FCE7F3; box-shadow:inset 0 0 0 1.5px #FBCFE8; }
+.loader__bar span{ background:linear-gradient(90deg, #F472B6, #DB2777); }
+.loader__label{ color:#9D174D; }
 .gift__sub{
   margin:var(--s-2) 0 0; padding:var(--s-2) var(--s-4);
   border-radius:var(--r-full);
-  background:rgba(255,255,255,.16);
-  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3);
-  color:#FFFFFF; font-weight:700; font-size:1.05rem;
+  background:#FFFFFF; box-shadow:inset 0 0 0 1.5px #FBCFE8, var(--shadow-sm);
+  color:#BE185D; font-weight:700; font-size:1.05rem;
 }
 .gift__sub:empty{ display:none; }
+
+/* voucher */
+.voucher{ background:#FFFFFF; box-shadow:inset 0 0 0 1.5px #FCE7F3, var(--shadow-lg); }
+.voucher__tear{ margin:var(--s-5) 0; border-top-color:#FBCFE8; }
+.voucher__tear::before, .voucher__tear::after{ display:none; }
+.voucher__sub{ color:#9D174D; }
+.voucher__row dt{ color:#DB2777; }
+.voucher__note{ background:#FDF2F8; box-shadow:inset 0 0 0 1.5px #FBCFE8; color:#831843; }
+
+/* ask */
+.ask__photo{ border:5px solid #FFFFFF; background:#FCE7F3; }
+.ask__aside{ color:#9D174D; }
+
+/* date tile + day picker */
+.datetile{ background:#FFFFFF; box-shadow:inset 0 0 0 1.5px #FCE7F3, var(--shadow-md); }
+.datetile__top{ background:#DB2777; color:#FFFFFF; }
+.datetile__day{ color:#6B1238; }
+.datetile__time{ color:#BE185D; }
+.slotq__sub, .book__sub{ color:#9D174D; }
+.daybtn{ background:#FFFFFF; border:1.5px solid #FBCFE8; box-shadow:var(--shadow-sm); color:#6B1238; }
+.daybtn small{ color:#9D174D; }
+.daybtn:hover{ border-color:#DB2777; }
+.daybtn[disabled]{ background:transparent; border-color:#FCE7F3; opacity:.6; }
+.daybtn[disabled] strong{ text-decoration-color:#F472B6; }
+
+/* confirm sheet */
+.scrim{ background:rgba(131,24,67,.35); }
+.sheet{ background:#FFFFFF; box-shadow:var(--shadow-lg); }
+.sheet__grab{ background:#FBCFE8; }
+
+/* done */
+.done__mark{ color:#DB2777; }
+.done__line{ color:#BE185D; }
+.countdown{ background:#FCE7F3; box-shadow:inset 0 0 0 1.5px #FBCFE8; color:#BE185D; }
+.done__caption, .done__foot{ color:#9D174D; }
+.done__dot{ color:#F9A8D4; }
