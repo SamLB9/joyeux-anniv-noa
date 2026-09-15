@@ -139,7 +139,8 @@
       var dur = reduced ? 1 : 1700, t0 = performance.now();
 
       (function step(now) {
-        var k = Math.min(1, (now - t0) / dur);
+        /* rAF timestamps can predate t0 by a few ms: clamp, or k goes negative */
+        var k = Math.max(0, Math.min(1, (now - t0) / dur));
         var eased = 1 - Math.pow(1 - k, 3);
         var pct = Math.round(eased * 99);
         bar.style.width = pct + "%";
@@ -694,14 +695,23 @@
     audio.preload = "auto";
     return audio;
   }
-  /* iOS ignores audio.volume, so there the song simply starts at full level */
+  /* Timer-based fade, not requestAnimationFrame: rAF can be throttled or
+     paused (background tab, headless, low-power), which left the song
+     playing at volume 0. A final timeout always lands the target volume.
+     iOS ignores audio.volume, so there the song simply starts at full level. */
+  var fadeTimer = null, fadeDone = null;
   function fadeTo(target, ms) {
-    var from = audio.volume, t0 = performance.now();
-    (function step(now) {
-      var k = Math.min(1, (now - t0) / ms);
-      audio.volume = from + (target - from) * k;
-      if (k < 1 && musicWanted) requestAnimationFrame(step);
-    })(t0);
+    clearInterval(fadeTimer); clearTimeout(fadeDone);
+    var from = audio.volume, t0 = Date.now();
+    fadeTimer = setInterval(function () {
+      var k = Math.max(0, Math.min(1, (Date.now() - t0) / ms));
+      audio.volume = Math.max(0, Math.min(1, from + (target - from) * k));
+      if (k >= 1) clearInterval(fadeTimer);
+    }, 50);
+    fadeDone = setTimeout(function () {
+      clearInterval(fadeTimer);
+      if (musicWanted) audio.volume = target;
+    }, ms + 100);
   }
   function playMusic() {
     if (!ensureAudio()) return;
@@ -715,6 +725,7 @@
   }
   function pauseMusic() {
     musicWanted = false;
+    clearInterval(fadeTimer); clearTimeout(fadeDone);
     if (audio) audio.pause();
     syncMusicBtn();
   }
