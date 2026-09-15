@@ -84,6 +84,7 @@
       }
     });
     current = name;
+    syncMusicBtn();
     window.scrollTo(0, 0);
     muteHash = true;
     location.hash = name;
@@ -127,6 +128,7 @@
 
   function openGift() {
     opening = true;
+    playMusic();   /* same tap as the third shake: browsers allow sound here */
     box.classList.add("is-open");
     box.setAttribute("aria-disabled", "true");
     var loader = $("loader"), bar = $("loaderFill"), label = $("loaderLabel");
@@ -680,6 +682,59 @@
       else ctx.clearRect(0, 0, vw, vh);
     })(t0);
   }
+
+  /* ═══════════ music ═══════════ */
+  var M = C.music || null, audio = null, musicWanted = false;
+  var musicBtn = $("musicBtn");
+
+  function ensureAudio() {
+    if (audio || !M || !M.src) return audio;
+    audio = new Audio(M.src);
+    audio.loop = true;
+    audio.preload = "auto";
+    return audio;
+  }
+  /* iOS ignores audio.volume, so there the song simply starts at full level */
+  function fadeTo(target, ms) {
+    var from = audio.volume, t0 = performance.now();
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / ms);
+      audio.volume = from + (target - from) * k;
+      if (k < 1 && musicWanted) requestAnimationFrame(step);
+    })(t0);
+  }
+  function playMusic() {
+    if (!ensureAudio()) return;
+    musicWanted = true;
+    var target = M.volume != null ? M.volume : 0.6;
+    audio.volume = reduced ? target : 0;
+    var p = audio.play();
+    if (p && p.catch) p.catch(function () { musicWanted = false; syncMusicBtn(); });
+    if (!reduced) fadeTo(target, 2000);
+    syncMusicBtn();
+  }
+  function pauseMusic() {
+    musicWanted = false;
+    if (audio) audio.pause();
+    syncMusicBtn();
+  }
+  function syncMusicBtn() {
+    if (!M || !M.src) { musicBtn.hidden = true; return; }
+    /* on the gift screen the button waits for the gift to open */
+    musicBtn.hidden = current === "gift" && !audio;
+    musicBtn.classList.toggle("is-on", musicWanted);
+    musicBtn.setAttribute("aria-pressed", musicWanted ? "true" : "false");
+    musicBtn.setAttribute("aria-label", musicWanted ? M.muteLabel : M.playLabel);
+  }
+  musicBtn.addEventListener("click", function () {
+    if (musicWanted) pauseMusic(); else playMusic();
+  });
+  /* stop when she switches app or locks the phone, resume when she's back */
+  document.addEventListener("visibilitychange", function () {
+    if (!audio) return;
+    if (document.hidden) audio.pause();
+    else if (musicWanted) { var p = audio.play(); if (p && p.catch) p.catch(function () {}); }
+  });
 
   /* ═══════════ boot ═══════════ */
   buildGift();

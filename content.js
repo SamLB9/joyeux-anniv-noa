@@ -9,6 +9,15 @@ const CONTENT = {
   her: "Noa",              // son prénom. Vide = "Joyeux anniversaire !"
   phone: "972587819105",   // WhatsApp, format international, chiffres seulement
 
+  /* musique : démarre quand elle ouvre le paquet (les navigateurs
+     interdisent le son avant un premier tap). src: null = pas de musique */
+  music: {
+    src:       "assets/audio/white-keys.mp3",
+    volume:    0.6,
+    playLabel: "Mettre la musique",
+    muteLabel: "Couper la musique"
+  },
+
   /* le créneau déjà réservé (mois : 1 = janvier) */
   dinner: { year: 2026, month: 9, day: 19, hour: 21, minute: 15 },
 
