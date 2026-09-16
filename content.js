@@ -66,7 +66,7 @@ const CONTENT = {
       { label: "Quand", value: "{day}" },
       { label: "Heure", value: "{time}" },
       { label: "Où",    value: "Secret. Tu le découvriras en arrivant." },
-      { label: "Tenue", value: "Raisonnablement bien habillée. Pas besoin de sortir la robe de gala." }
+      { label: "Tenue", value: "Raisonnablement bien habillée. Pas besoin de sortir la robe de mariage." }
     ],
     note: "La table est déjà réservée et dans un resto casher bien\u00a0sûr\u00a0;)",
     cta:  "trop bien, et maintenant ?"
@@ -132,8 +132,8 @@ const CONTENT = {
     countdownDays:  "plus que {d} j et {h} h",
     countdownHours: "plus que {h} h {m} min",
     countdownNow:   "c'est l'heure !",
-    messageSame:  "Samedi {time}, j'y serai 🎉",
-    messageMoved: "Samedi je ne peux pas, mais {dayLower} à {time} c'est parfait 🎉",
+    messageSame:  "Samedi {time}, j'y serai ❤️🎉",
+    messageMoved: "Samedi je ne peux pas, mais {dayLower} à {time} c'est parfait ❤️🎉",
     whatsappCta:  "Envoyer ma réponse à {you}",
     calendarCta:  "ajouter à mon agenda",
     copyCta:      "copier le message",
