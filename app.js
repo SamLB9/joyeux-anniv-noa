@@ -212,7 +212,11 @@
         badge.innerHTML =
           '<svg viewBox="0 0 64 56" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">' +
             '<path d="M15 16L4 28l11 12"/><path d="M49 16l11 12-11 12"/>' +
-            '<path fill="#FDA4AF" stroke="none" d="M32 41c-.8 0-1.5-.3-2.1-.8C23.4 34.6 20 31.4 20 26.6 20 22.9 22.8 20 26.3 20c2.4 0 4.4 1.2 5.7 3.2C33.3 21.2 35.3 20 37.7 20c3.5 0 6.3 2.9 6.3 6.6 0 4.8-3.4 8-9.9 13.6-.6.5-1.3.8-2.1.8z"/>' +
+            '<g stroke="none" fill="#FACC15">' +
+              '<path d="M32 18.5c-2.2-3.4-6.6-3-5.6 0.6.3 1.1 1.6 1.7 3 2h-5.2a1.6 1.6 0 0 0-1.6 1.6v3.1h18.8v-3.1a1.6 1.6 0 0 0-1.6-1.6h-5.2c1.4-.3 2.7-.9 3-2 1-3.6-3.4-4-5.6-.6z"/>' +
+              '<path d="M23.6 28.3h16.8v10.9a1.6 1.6 0 0 1-1.6 1.6H25.2a1.6 1.6 0 0 1-1.6-1.6V28.3z"/>' +
+              '</g>' +
+            '<path stroke="#C2185B" stroke-width="2.6" d="M32 22.6v18.2"/>' +
           '</svg>';
         body.appendChild(badge);
       }
