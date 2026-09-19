@@ -19,7 +19,7 @@ const CONTENT = {
   },
 
   /* le créneau déjà réservé (mois : 1 = janvier) */
-  dinner: { year: 2026, month: 9, day: 19, hour: 21, minute: 15 },
+  dinner: { year: 2026, month: 9, day: 24, hour: 20, minute: 30 },
 
   /* --- ECRAN 1 : le paquet ---------------------------------- */
   gift: {
@@ -34,23 +34,18 @@ const CONTENT = {
   /* --- ECRAN 2 : les cartes --------------------------------- */
   slides: [
     {
-      photo:    "assets/photos/nous.jpg",
-      focus:    "50% 32%",
-      caption:  "Toi au volant, moi le bras sur ton siège. Petite précision, ce n'est pas de la tendresse, c'était pour m'accrocher avant ton créneau. 😂"
-    },
-    {
       headline: "Ce que j'ai failli t'offrir",
       list: [
         "Des cours à l'auto-école pour t'apprendre à faire des créneaux",
         "Une boussole pour améliorer ton sens de l'orientation",
         "Un Glock pour tes excursions en Cisjordanie"
       ],
-      caption:  "Tous rejetés par le comité, Sam."
+      caption:  "Tous rejetés par le comité - Sam."
     },
     {
       photo:    null,
       headline: "J'ai codé un site au lieu d'emballer un paquet",
-      caption:  "Du papier cadeau, je n'en avais pas. Des soirées pour coder ça, apparemment si.",
+      caption:  "Du papier cadeau, je n'en avais pas. Des soirées pour coder ça, apparemment j'en ai.",
       kicker:   "Le vrai cadeau est juste après."
     }
   ],
@@ -91,7 +86,7 @@ const CONTENT = {
 
   /* --- ECRAN 5 : le créneau --------------------------------- */
   slot: {
-    title:   "Samedi {time}, t'es libre ?",
+    title:   "Jeudi {time}, t'es libre ?",
     sub:     "La table t'attend. Si ce soir-là ne va pas, on trouve un autre soir.",
     yes:     "Oui, j'y serai",
     no:      "Pas dispo ce soir-là"
@@ -120,20 +115,20 @@ const CONTENT = {
     confirmLine: "{day}, {time}. Ça te va ?",
     confirmCta:  "Oui, ce soir-là",
     changeCta:   "un autre soir",
-    back:        "ah si, samedi ça marche"
+    back:        "ah si, jeudi ça marche"
   },
 
   /* --- ECRAN 7 : confirmation ------------------------------- */
   done: {
     headline:     "C'est noté.",
     line:         "{day}, {time}.",
-    captionSame:  "Rendez-vous samedi. Toi, tu n'as qu'à venir bien habillée et avec l'appétit.",
+    captionSame:  "Rendez-vous jeudi. Toi, tu n'as qu'à venir bien habillée et avec l'appétit.",
     captionMoved: "Je m'occupe de déplacer la table. Toi, tu n'as qu'à venir bien habillée et avec l'appétit.",
     countdownDays:  "plus que {d} j et {h} h",
     countdownHours: "plus que {h} h {m} min",
     countdownNow:   "c'est l'heure !",
-    messageSame:  "Samedi {time}, j'y serai ❤️🎉",
-    messageMoved: "Samedi je ne peux pas, mais {dayLower} à {time} c'est parfait ❤️🎉",
+    messageSame:  "Jeudi {time}, j'y serai 🎉",
+    messageMoved: "Jeudi je ne peux pas, mais {dayLower} à {time} c'est parfait 🎉",
     whatsappCta:  "Envoyer ma réponse à {you}",
     calendarCta:  "ajouter à mon agenda",
     copyCta:      "copier le message",
