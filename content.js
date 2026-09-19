@@ -45,7 +45,7 @@ const CONTENT = {
     {
       photo:    null,
       headline: "J'ai codé un site au lieu d'emballer un paquet",
-      caption:  "Du papier cadeau, je n'en avais pas. Des soirées pour coder ça, apparemment j'en ai.",
+      caption:  "Du papier cadeau, je n'en avais pas. Des soirées pour coder ça, apparemment j'en avais.",
       kicker:   "Le vrai cadeau est juste après."
     }
   ],
